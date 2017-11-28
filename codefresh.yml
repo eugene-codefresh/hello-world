@@ -1,0 +1,23 @@
+version: '1.0'
+steps:
+  BuildingDockerImage:
+    title: Building Docker Image
+    type: build
+    image_name: eugenecodefresh/helloworld
+    working_directory: ./
+    dockerfile: Dockerfile
+    tag: '${{CF_BRANCH_TAG_NORMALIZED}}'
+
+  PushToRegistry:
+    type: push
+    candidate: ${{BuildingDockerImage}}
+    tag: "1.0"
+
+  DeployToDcos:
+    image: codefresh/cf-deploy-kubernetes
+    tag: latest
+    working-directory: ${{initial-clone}}
+    commands:
+      - /cf-deploy-dcos deployment.json
+    environment:
+      - DCOS_URL=${{DCOS_URL}}
