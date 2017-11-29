@@ -7,7 +7,7 @@
     "type" : "DOCKER",
     "docker": {
       "image": "eugenecodefresh/helloworld:1.0",
-      "forcePullImage": false,
+      "forcePullImage": true,
       "privileged": false,
       "network": "BRIDGE",
       "portMappings": [
