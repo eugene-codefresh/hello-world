@@ -20,3 +20,7 @@ steps:
       - /cf-deploy-dcos deployment.json
     environment:
       - DCOS_URL=${{DCOS_URL}}
+      - DCOS_CLUSTER_NAME=${{DCOS_CLUSTER_NAME}}
+      - DCOS_CLUSTER_ID=${{DCOS_CLUSTER_ID}}
+      - DCOS_DCOS_ACS_TOKEN=${{DCOS_DCOS_ACS_TOKEN}}
+      - DCOS_SSL_VERIFY=${{DCOS_SSL_VERIFY}}
