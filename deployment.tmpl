@@ -1,12 +1,12 @@
 {
-  "id": "/dcos/helloworld",
+  "id": "{{APP_ID}}",
   "instances": 1,
   "cpus": 0.1,
   "mem": 64,
   "container": {
     "type" : "DOCKER",
     "docker": {
-      "image": "eugenecodefresh/helloworld:1.0",
+      "image": "{{IMAGE_NAME}}:{{IMAGE_TAG}}",
       "forcePullImage": true,
       "privileged": false,
       "network": "BRIDGE",
