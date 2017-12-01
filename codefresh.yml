@@ -17,7 +17,7 @@ steps:
     image: codefresh/cf-deploy-dcos:latest
     working_directory: ${{main_clone}}
     commands:
-      - /cf-deploy-dcos deployment.json
+      - /cf-deploy-dcos deployment.tmpl
     environment:
       - DCOS_URL=${{DCOS_URL}}
       - DCOS_CLUSTER_NAME=${{DCOS_CLUSTER_NAME}}
